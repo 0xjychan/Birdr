@@ -1,0 +1,10 @@
+# Image folders and data
+dataset/train/*
+dataset/valid/*
+dataset/test/*
+archive
+
+# Misc
+*/.DS_Store
+.DS_Store
+
