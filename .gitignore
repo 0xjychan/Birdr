@@ -14,8 +14,8 @@ dataset/test/*
 archive
 
 # API & frontend folder
-/api
-/frontend
+api/
+frontend/
 
 # Misc
 */.DS_Store
