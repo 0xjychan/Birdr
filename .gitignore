@@ -1,8 +1,21 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
 # Image folders and data
 dataset/train/*
 dataset/valid/*
 dataset/test/*
 archive
+
+# API & frontend folder
+./api 
+./frontend
 
 # Misc
 */.DS_Store

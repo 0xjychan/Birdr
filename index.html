@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birdr</title>
+  <link href="/styles.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">Birdr: Is it a bird?</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+        <button class="mdc-button">
+          <a target="_blank" href="https://github.com/mrdbourke/food-not-food">
+            <span class="mdc-button__ripple"></span>
+            <img class="mdc-button__icon" src="images/github.svg" alt="Github" />
+          </a>
+        </button>
+      </section>
+    </div>
+  </header>
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <p>This app will tell you if the image you upload is a bird or not.</p>
+    <p>
+      It uses a machine learning model to classify your
+      image as "Bird" or "Not Bird".
+    </p>
+    <!-- <br />
+      <p>The line below will say loaded if TensorFlow.js is loaded:</p>
+      <p id="tfjs_status">Awaiting TF.js load</p>
+      <br />
+      <p>This line below will say loaded if the model is loaded:</p>
+      <p id="model_status">Awaiting TF.js model/TFLite model loading</p> -->
+
+    <!-- Upload image -->
+    <br />
+    <button id="upload-button" class="mdc-button mdc-button--outlined mdc-button--icon-leading">
+      <span class="mdc-button__ripple"></span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">upload</i>
+      <span class="mdc-button__label">Upload Image</span>
+    </button>
+    <p>
+      <input type="file" style="display: none" accept="image/*" name="image" id="file-input" />
+    </p>
+    <p><img id="image" width="200" /></p>
+
+    <p>Predicted class:</p>
+    <p id="predicted_class"></p>
+    <p>Confidence:</p>
+    <p id="predicted_prob"></p>
+
+    <p>
+      See the code on
+      <a href="https://github.com/0xjychan/Birdr">GitHub</a>.
+    </p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite@0.0.1-alpha.7/dist/tf-tflite.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
