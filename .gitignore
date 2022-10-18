@@ -11,7 +11,7 @@ venv.bak/
 dataset/train/*
 dataset/valid/*
 dataset/test/*
-archive
+archive/
 
 # API & frontend folder
 api/
