@@ -13,10 +13,6 @@ dataset/valid/*
 dataset/test/*
 archive/
 
-# API & frontend folder
-/api
-/frontend
-/gcp
 
 # Misc
 */.DS_Store

@@ -6,26 +6,22 @@ from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 
-MODEL0 = tf.keras.models.load_model('../birdr_model0')
+MODEL0 = tf.keras.models.load_model('./birdr_model0.h5')
 CLASS_NAME = ['Not a Bird', 'Bird']
 
 app = FastAPI()
 
-origins = ["http://localhost",
-           "http://localhost:3000"
-        ]
-
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+        CORSMiddleware,
+        allow_credentials=True,
+        allow_headers=['*'],
+        allow_methods=['*'],
+        allow_origins=['*'],
+    )
 
-@app.get('/home')
+@app.get('/')
 async def home():
-    return 'Birdr backend server is running'
+    return 'Server is running'
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
@@ -49,13 +45,10 @@ async def predict(
     prediction = MODEL0.predict(image_batch).flatten()
     predicted_class = CLASS_NAME[class_label(prediction[0])]
     confidence = prediction[0]
-    #predicted_class = 1
-    #confidence = 0.98
     return {
         'class':predicted_class,
         'confidence': float(confidence)
     }
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='localhost', port=8000)
+
