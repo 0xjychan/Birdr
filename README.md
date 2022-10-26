@@ -3,4 +3,6 @@ Machine learning model to classify bird built using EfficientNetB0 as the base m
 
 ![Birdr web app](./img/birdr_app.png)
 
+Check out the web app [here](https://birdr-99958.web.app)
+
 [Link to dataset](https://www.kaggle.com/datasets/gpiosenka/100-bird-species)
